@@ -1,0 +1,141 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "BOL Processing API",
+  "dateExported": "2025-01-13T12:00:00.000Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "1. Health Check",
+      "url": "http://localhost:5000/health",
+      "method": "GET",
+      "headers": [],
+      "body": {
+        "type": "none"
+      },
+      "tests": [],
+      "docs": "Check if the API server is running and healthy"
+    },
+    {
+      "name": "2. API Root",
+      "url": "http://localhost:5000/",
+      "method": "GET",
+      "headers": [],
+      "body": {
+        "type": "none"
+      },
+      "tests": [],
+      "docs": "Get welcome message and available endpoints"
+    },
+    {
+      "name": "3. API Documentation",
+      "url": "http://localhost:5000/api/docs",
+      "method": "GET",
+      "headers": [],
+      "body": {
+        "type": "none"
+      },
+      "tests": [],
+      "docs": "Get complete API documentation"
+    },
+    {
+      "name": "4. Process PDF Only",
+      "url": "http://localhost:5000/process",
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": [
+          {
+            "name": "pdf",
+            "value": "",
+            "type": "file",
+            "disabled": false
+          }
+        ]
+      },
+      "tests": [],
+      "docs": "Upload and process a PDF file. Select a PDF file for the 'pdf' field."
+    },
+    {
+      "name": "5. Process PDF + CSV",
+      "url": "http://localhost:5000/process",
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": [
+          {
+            "name": "pdf",
+            "value": "",
+            "type": "file",
+            "disabled": false
+          },
+          {
+            "name": "csv",
+            "value": "",
+            "type": "file",
+            "disabled": false
+          }
+        ]
+      },
+      "tests": [],
+      "docs": "Upload and process a PDF file with additional CSV data. Select files for both 'pdf' and 'csv' fields."
+    },
+    {
+      "name": "6. Test Error - Missing PDF",
+      "url": "http://localhost:5000/process",
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": []
+      },
+      "tests": [],
+      "docs": "Test error handling when no PDF is provided. Should return 400 Bad Request."
+    },
+    {
+      "name": "7. Debug Multipart",
+      "url": "http://localhost:5000/debug/multipart",
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": [
+          {
+            "name": "pdf",
+            "value": "",
+            "type": "file",
+            "disabled": false
+          }
+        ]
+      },
+      "tests": [],
+      "docs": "Debug endpoint to test multipart form data parsing. Use this to diagnose file upload issues."
+    },
+    {
+      "name": "8. Test Error - Wrong Field",
+      "url": "http://localhost:5000/process",
+      "method": "POST",
+      "headers": [],
+      "body": {
+        "type": "formdata",
+        "raw": "",
+        "form": [
+          {
+            "name": "wrong_field",
+            "value": "",
+            "type": "file",
+            "disabled": false
+          }
+        ]
+      },
+      "tests": [],
+      "docs": "Test error handling when wrong field name is used. Should return 400 Bad Request."
+    }
+  ]
+} 
