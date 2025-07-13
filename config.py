@@ -2,7 +2,7 @@ import os
 import platform
 
 # OpenAI Configuration
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'dummy-key-for-development')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Poppler Configuration
 POPPLER_PATH = os.getenv('POPPLER_PATH', '/usr/bin')
